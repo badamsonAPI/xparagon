@@ -64,6 +64,13 @@
   </style>
 </head>
 <body>
+  <script>
+    const access = localStorage.getItem("aurum_access");
+    if (access !== "granted") {
+      window.location.href = "index.html";
+    }
+  </script>
+
   <img src="logo.png" alt="Aurum Domains Logo" class="logo" width="150"/>
   <h1>Submit Your Private Offer for <strong>XParagon.com</strong></h1>
   <p>Please complete the form below to submit your offer. This is by private invitation only.</p>
