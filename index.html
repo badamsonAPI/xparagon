@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Exclusive Domain Offer – Aurum Domains</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="Exclusive Domain Offer – Aurum Domains"/>
+  <meta property="og:image" content="https://aurumdomains.com/logo.png"/>
+  <meta property="og:description" content="This domain is being offered privately to selected UAE companies only."/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #000;
+      color: #d4af37;
+      text-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 2s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      max-width: 90%;
+    }
+    p {
+      font-size: 1.1rem;
+      margin: 10px 20px;
+      max-width: 600px;
+    }
+    .logo {
+      margin-bottom: 30px;
+    }
+    .input-container {
+      margin-top: 25px;
+    }
+    input[type="password"] {
+      padding: 12px;
+      font-size: 1rem;
+      width: 250px;
+      border: none;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    input[type="password"]:focus {
+      outline: none;
+      box-shadow: 0 0 5px #d4af37;
+    }
+    button {
+      background-color: #d4af37;
+      color: #000;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    button:hover {
+      background-color: #b89424;
+      color: #fff;
+    }
+    button:active {
+      transform: scale(0.98);
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Aurum Domains Logo" class="logo" width="150"/>
+  <h1>This domain is being offered exclusively to select, high-profile companies in the UAE by invitation only.</h1>
+  <p>This domain is not publicly listed for sale. To submit a private offer, please enter the exclusive access code provided in your invitation email.</p>
+
+  <!-- Access code form -->
+  <form onsubmit="return validateAccessCode();" class="input-container">
+    <label for="access-code" style="display: none;">Access Code</label>
+    <input 
+      type="password" 
+      id="access-code" 
+      placeholder="Access Code" 
+      aria-label="Access Code" 
+      required 
+    /><br/>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="footer">
+    Presented by <strong>Aurum Domains</strong>
+  </div>
+
+  <script>
+    function validateAccessCode() {
+      const code = document.getElementById("access-code").value.trim();
+      const encoded = "ODhEWEIyMDI1";
+      const decoded = atob(encoded);
+
+      if (code === decoded) {
+        window.location.href = "offer.html";
+      } else {
+        alert("Invalid access code. Please check your invitation.");
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>

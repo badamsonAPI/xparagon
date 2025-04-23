@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Your Offer – Aurum Domains</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #000;
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .logo {
+      margin-top: 40px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin: 20px 0 10px;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    input, button {
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 1rem;
+      border-radius: 4px;
+      border: none;
+      width: 280px;
+    }
+    input {
+      background-color: #1a1a1a;
+      color: #fff;
+      border: 1px solid #d4af37;
+    }
+    button {
+      background-color: #d4af37;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .thank-you {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Aurum Domains Logo" class="logo" width="150"/>
+  <h1>Submit Your Private Offer for <strong>dbxai.xyz</strong></h1>
+  <p>Please complete the form below to submit your offer. This is a private invitation only.</p>
+
+  <form id="offerForm" action="https://formspree.io/f/xovdqjbp" method="POST" onsubmit="return showThankYou();">
+    <input type="hidden" name="domain" value="dbxai.xyz" />
+    <input type="email" name="email" placeholder="Your Email Address" required />
+    <input type="text" name="offer" placeholder="Your Offer (USD)" required />
+    <button type="submit">Submit Offer</button>
+  </form>
+
+  <div class="thank-you" id="thankYouMessage">
+    Thank you for your offer. Our team will review it and reach out if selected.
+  </div>
+
+  <script>
+    function showThankYou() {
+      document.getElementById('offerForm').style.display = 'none';
+      document.getElementById('thankYouMessage').style.display = 'block';
+      return true; // still allow form to submit to Formspree
+    }
+  </script>
+</body>
+</html>
