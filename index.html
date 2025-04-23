@@ -104,19 +104,28 @@
     Presented by <strong>Aurum Domains</strong>
   </div>
 
-  <script>
-    function validateAccessCode() {
-      const code = document.getElementById("access-code").value.trim();
-      const encoded = "ODhEWEIyMDI1";
-      const decoded = atob(encoded);
+<script>
+  const acceptedHashes = [
+    "RFhCQklEODg=",
+    "UkFLNDIwWA==",
+    "VUFFTUtUMjM=",
+    "UUFTUjIwMjU=",
+    "SU5WSVRFOVo="
+  ];
 
-      if (code === decoded) {
-        window.location.href = "offer.html";
-      } else {
-        alert("Invalid access code. Please check your invitation.");
-      }
-      return false;
+  function validateAccessCode() {
+    const code = document.getElementById("access-code").value.trim();
+    const encoded = btoa(code);
+
+    if (acceptedHashes.includes(encoded)) {
+      localStorage.setItem("aurum_access", "granted");
+      window.location.href = "offer.html";
+    } else {
+      alert("Invalid access code. Please check your invitation.");
     }
-  </script>
+
+    return false;
+  }
+</script>
 </body>
 </html>
